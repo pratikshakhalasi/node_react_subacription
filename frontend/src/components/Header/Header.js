@@ -10,13 +10,14 @@ import Login from "../Login/Login";
 import RegistrationForm from "../RegistrationForm/RegistrationForm";
 import { Component } from "react";
 import Package from '../Package/Package';
-
+import CardDetails from '../Package/CardDetails';
 
 class Header extends Component {
 	constructor(props){
         super(props);
         //does whatever stuff        
         this.showError = this.showError.bind(this);
+		console.log(this.props.userdata+ 'i am here ');
 		
 		this.setState({ message: "" });
 		this.setState({ messageclass: "" });
@@ -70,6 +71,9 @@ class Header extends Component {
 	          </Route>
 			  <Route path="/dashboard">
 	            <Package />
+	          </Route>
+			  <Route path="/card-details">
+	            <CardDetails />
 	          </Route>
 	          <Route path="/">
 	            <Login />

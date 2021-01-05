@@ -44,10 +44,10 @@
             <tbody>
               <% for (var i = 0; i < packages.length; i++) { %>
               <tr>
-                <th scope="row">1</th>
+                <th scope="row"><%=i%></th>
                 <td> <%= packages[i].name %></td>
                 <td> <%= packages[i].description %></td>
-                <td>@ <%= packages[i].amount %></td>
+                <td>$<%= packages[i].amount %></td>
               </tr>
               <% } %>
             </tbody>

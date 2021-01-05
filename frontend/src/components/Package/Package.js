@@ -3,6 +3,7 @@ import React from "react";
 import {API_BASE_URL} from './../../constant';
 import axios from 'axios';
 import { Component } from "react";
+import CardDetails from '../Package/CardDetails';
 
  class Package extends Component {
 	constructor(){
@@ -19,7 +20,6 @@ import { Component } from "react";
             
             this.setState({ "plans": res.data.data});
             
-            console.log(this.state.plans[0].name);
           }).catch(function (error) {
             console.log(error);
         }); 
@@ -38,9 +38,8 @@ import { Component } from "react";
                     <h5 className="card-title">{d.name}</h5>
                     <p className="card-text">{d.description}</p>
                     <h3>{d.amount}</h3>
-                    <a href="/card-details?package={d.name}" className="btn btn-primary">Subscribe</a>
+                    <CardDetails package_id={d._id}></CardDetails>
                     
-                  
                   </div>
                 </div>
               </div>

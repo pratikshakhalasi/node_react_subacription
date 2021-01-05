@@ -9,7 +9,6 @@
     "admin-lte": "^3.0.5",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
-    "bootstrap": "^4.5.2",
     "config": "^3.3.1",
     "connect-ensure-login": "^0.1.1",
     "cookie-parser": "^1.4.5",
@@ -27,6 +26,12 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.0.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "stripe": "^8.129.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.4.1",
+    "tempusdominus-core": "^5.0.3"
   }
 }

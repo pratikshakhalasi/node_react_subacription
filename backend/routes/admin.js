@@ -16,6 +16,7 @@ router.get('/login', adminIndexController.login);
 router.post('/login', adminIndexController.postlogin);
 router.post('/register', adminIndexController.register);
 router.post('/apilogin', adminIndexController.apiLogin);
+router.post('/apitoken',adminPackagesController.apiToken);
 router.get('/apichecklogin',adminIndexController.apichecklogin);
 
 router.get('/products',connectEnsureLogin.ensureLoggedIn('/admin/login'), adminProductsController.index);
@@ -26,6 +27,9 @@ router.get('/packages',connectEnsureLogin.ensureLoggedIn('/admin/login'), adminP
 router.get('/packages/create',connectEnsureLogin.ensureLoggedIn('/admin/login'), adminPackagesController.create);
 router.post('/packages/save',connectEnsureLogin.ensureLoggedIn('/admin/login'), adminPackagesController.save);
 router.get('/packages/apigetPackage',adminPackagesController.apigetPackage);
+
+
+
 
 
 
