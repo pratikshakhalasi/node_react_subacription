@@ -18,7 +18,7 @@ class CardDetails extends Component{
         
         axios.post(API_BASE_URL+'/admin/apitoken', payload).then( (response) =>{
           if(response.status === 200){
-            console.log(response.data);
+            window.location.href ="/success"
             
           } else{
             alert("Some error ocurred");

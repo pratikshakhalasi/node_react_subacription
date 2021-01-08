@@ -42,10 +42,7 @@ const PackagesController = {
         console.log( token.package_id);
         var package = {};
         Package.findOne(query, function(err, package) {
-            console.log('package_name',package.amount);
-            console.log('token data',token.id);
-            console.log('Package',package);
-            console.log('Token',token);
+           
            // const  idempontencyKey = uuidv4();
     
             return  stripe.customers.create({

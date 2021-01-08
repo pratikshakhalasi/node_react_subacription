@@ -43,11 +43,19 @@ import { Redirect } from "react-router-dom";
 					if(response.data.error === true){
 						
 						this.setState({ loggedin: false });
+						localStorage.setItem('loggedIn', false);
+						localStorage.setItem('user', '');
 					}else{
 						
+						
+						localStorage.setItem('loggedIn', response.data.loggedIn);
+						localStorage.setItem('user_id', response.data.user_id);
+						localStorage.setItem('user_name', response.data.username);
+
+						window.location.reload();
 						this.setState({ redirect: "/dashboard" });
-						this.setState(response.data);
-						console.log('registered!!');
+						window.location.href = '/dashboard';
+
 					}
 					
 					

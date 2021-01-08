@@ -4,7 +4,7 @@ import {API_BASE_URL} from './../../constant';
 import axios from 'axios';
 import { Component } from "react";
 import CardDetails from '../Package/CardDetails';
-
+import  { Col, Row ,Container} from "react-bootstrap"
  class Package extends Component {
 	constructor(){
         super();
@@ -28,25 +28,31 @@ import CardDetails from '../Package/CardDetails';
     
       render(){
         return (
-          
-           <div>
+          <Container>
+          <p>&nbsp;</p>
+          <Row className="show-grid">
+           
             {this.state.plans.map(d => (
-              <div>
-                <div className="card">
+              
+              <Col md={4}>
+               
+               <div className="card">
                  
-                  <div className="card-body">
-                    <h5 className="card-title">{d.name}</h5>
-                    <p className="card-text">{d.description}</p>
-                    <h3>{d.amount}</h3>
-                    <CardDetails package_id={d._id}></CardDetails>
-                    
-                  </div>
-                </div>
-              </div>
+                 <div className="card-body">
+                   <h5 className="card-title">{d.name}</h5>
+                   <p className="card-text">{d.description}</p>
+                   <h3>${d.amount}</h3>
+                   <CardDetails package_id={d._id}></CardDetails>
+                   
+                 </div>
+               </div>
+               <p>&nbsp;</p>
+              </Col>
             
             ))} 
-      </div>
-            
+      </Row>
+      </Container>
+         
         )
       }
 }

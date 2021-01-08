@@ -85,17 +85,16 @@ const IndexController = {
 			  
 			}
 			req.session.user = user;
-			
-			res.json({ "loggedIn": true , user: user});
+			res.json({ "loggedIn": '1' , user_id: user._id,user_name: user.username});
 		  });
 
 		})(req, res, next);
   },
   apichecklogin	(req, res){
 	if(req.session.user){
-		res.send({ "loggedIn": true , user: req.session.user});
+		res.send({ "loggedIn": '1' , user: req.session.user});
 	}else{
-		res.send({ "loggedIn": false });
+		res.send({ "loggedIn": '0' ,user: false});
 	}
 
   }
