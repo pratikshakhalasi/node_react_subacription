@@ -42,7 +42,7 @@ import  { Col, Row ,Container} from "react-bootstrap"
                    <h5 className="card-title">{d.name}</h5>
                    <p className="card-text">{d.description}</p>
                    <h3>${d.amount}</h3>
-                   <CardDetails package_id={d._id}></CardDetails>
+                   <CardDetails user_id={localStorage.user_id} package_id={d._id}></CardDetails>
                    
                  </div>
                </div>

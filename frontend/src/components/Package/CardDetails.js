@@ -10,6 +10,7 @@ class CardDetails extends Component{
   }
     onToken = (token) => {
         token.package_id = this.props.package_id ;
+        token.user_id = this.props.user_id;
         const payload={
           "token": token
           

@@ -1,8 +1,14 @@
 
+const Subscription = require('../../models/subscription.model');
 const OrdersController = {
+   
     index (req, res) {
-    	console.log(req.session);
-     res.render('admin/orders', { req: req , res: res});
+    	
+        Subscription.find({}, function(err, data) {
+            // note that data is an array of objects, not a single object!
+            res.render('admin/packages/orders', { req: req , res: res,subscriptions:data});
+        });
+     	
     },
 
 };

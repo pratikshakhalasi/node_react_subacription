@@ -1,5 +1,6 @@
 const Package = require('../../models/package.model');
-const stripe = require('stripe')('sk_test_HfBt6o9qPAElPsHcOhOFE97w00nQdQhopr');
+const Subscription = require('../../models/subscription.model');
+const stripe = require('stripe')('sk_test_51GfLMaAkg8ywevJyHPjpSqRAccjNPdQI3GNeZpCuu6kNDgTE14TDOY1wDr32ZUlKzel2qds2pY0nD4eTxeu9NDgp00a3mLsVMe');
 const { v4: uuidv4 } = require('uuid');
 const PackagesController = {
     index (req, res) {
@@ -56,6 +57,18 @@ const PackagesController = {
                             currency: 'INR',
                             description: 'package subscription:'+package.name,
                         })
+
+                        //save to database
+                        data = {"customer_id": customer.id,
+                                "user_id":token.user_id,
+                                "package_id":token.package_id,
+                                "package_amount": package.amount,
+                                "subscription_date": new Date()
+                            }
+                        console.log(data);
+                        console.log('test here ');
+                        var myData = new Subscription(data);
+                        myData.save();
                         
                 
                 }).then(result => res.status(200).json(result))
